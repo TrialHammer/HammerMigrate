@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+project=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+case ${1:-help} in
+  verify)
+    if [[ ! -f "$project/pom.xml" ]]; then
+      printf '%s\n' 'Verification requires the source checkout; use check for an installed release.' >&2
+      exit 2
+    fi
+    shift
+    exec mvn -B -ntp -f "$project/pom.xml" clean verify "$@"
+    ;;
+  deploy|check|rollback|package)
+    exec python3 "$project/bin/deploy.py" "$@"
+    ;;
+  *)
+    printf '%s\n' 'HammerMigrate' \
+      '  ./hammermigrate verify' \
+      '  ./hammermigrate deploy --profile /path/deployment.json [--dry-run] [--jar /path/HammerMigrate.jar]' \
+      '  ./hammermigrate package [--jar /path/HammerMigrate.jar]' \
+      '  ./hammermigrate check --profile /path/deployment.json' \
+      '  ./hammermigrate rollback --profile /path/deployment.json --deployment <ID>'
+    ;;
+esac

@@ -1,0 +1,5 @@
+name: HammerMigrate
+version: 1.0.0
+main: ink.ziip.hammer.migrate.BungeePlugin
+author: ziip
+softDepends: [packetevents]

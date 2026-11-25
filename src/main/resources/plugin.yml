@@ -1,0 +1,13 @@
+name: HammerMigrate
+version: 1.0.0
+main: ink.ziip.hammer.migrate.PaperPlugin
+api-version: '1.21'
+load: STARTUP
+loadbefore: [AuthMe, LuckPerms, Plan, CMI, Essentials, Lands, HuskHomes, HuskSync, QuickShop-Hikari, CoreProtect, InventoryRollbackPlus, SkinsRestorer, ChessCraft, LibertyBans]
+commands:
+  hmigrate:
+    description: Queue and audit offline player renames
+    permission: hammermigrate.admin
+permissions:
+  hammermigrate.admin:
+    default: op

@@ -1,0 +1,14 @@
+{
+  "sharedDirectory": "./network",
+  "containerSharedDirectory": "/network",
+  "servers": {
+    "backend-a": {"directory": "./servers/backend-a"},
+    "backend-b": {"directory": "./servers/backend-b"},
+    "backend-c": {"directory": "./servers/backend-c"}
+  },
+  "network": {
+    "scanThreads": 4,
+    "scanMaxPasses": 3,
+    "requireCompleteCoverage": true
+  }
+}

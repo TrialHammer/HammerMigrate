@@ -1,0 +1,28 @@
+{
+  "networkRoot": "../../..",
+  "servers": [
+    "backend-a",
+    "backend-b",
+    "backend-c"
+  ],
+  "python": "python3",
+  "startup": "external",
+  "premiumDefault": false,
+  "maxFileMiB": 256,
+  "scanMaxPasses": 3,
+  "databaseEndpoints": [],
+  "fieldRules": [],
+  "exclude": [
+    "logs",
+    "libraries",
+    ".paper-remapped",
+    "backups",
+    "backup",
+    "history-backups"
+  ],
+  "notes": "Paths are relative to this config. Use init --root to create a network-specific config. external uses the pre-start CLI; embedded is for an offline single coordinated boot.",
+  "discoverRelatedSchemas": true,
+  "embeddedDatabases": {},
+  "serverHosts": {},
+  "ignorePaths": []
+}

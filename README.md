@@ -1,6 +1,6 @@
 # HammerMigrate
 
-迁移离线玩家的用户名及离线 UUID，支持 Paper、可选 BungeeCord 和多容器启动前协调。包名为 `ink.ziip.hammer.migrate`。
+迁移离线玩家的用户名及离线 UUID，支持 Paper、可选 BungeeCord 和多容器启动前协调。
 
 扫描自动发现当前文件与数据库，生成持久 manifest 和可回退计划。正式迁移在服务器启动前执行；命令负责排队、查看、重试、取消和回退。
 
